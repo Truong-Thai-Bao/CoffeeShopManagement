@@ -75,6 +75,7 @@ namespace PresentationLayer
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(234, 29);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.Text = "admin";
             // 
             // txtPassword
             // 
@@ -82,6 +83,7 @@ namespace PresentationLayer
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(234, 29);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "123";
             // 
             // btnLogin
             // 
@@ -107,6 +109,7 @@ namespace PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(423, 490);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);

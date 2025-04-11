@@ -26,12 +26,28 @@ namespace PresentationLayer
             if (result == DialogResult.OK)
             {
                 this.Enabled = true;
-                label1.Text = "Welcome " + "XXX";
+                label1.Text = "Welcome " + "Admin";
             }
             else
             {
                 Application.Exit();
             }
+        }
+
+        public void addForm(Form form)
+        {
+            form.TopLevel = false;
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(form);
+
+            form.Dock = DockStyle.Fill;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Show();
+        }
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            addForm(new FormSupplier.FrmSupplier());
         }
     }
 }
