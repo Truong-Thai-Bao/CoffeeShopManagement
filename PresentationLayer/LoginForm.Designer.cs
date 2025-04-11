@@ -81,6 +81,7 @@ namespace PresentationLayer
             // 
             this.txtPassword.Location = new System.Drawing.Point(146, 302);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(234, 29);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "123";

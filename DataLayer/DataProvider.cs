@@ -18,7 +18,7 @@ namespace DataLayer
             cn = new SqlConnection(cnStr);
         }
 
-        private void Connect()
+        public void Connect()
         {
             if (cn.State == ConnectionState.Closed)
             {
@@ -26,7 +26,7 @@ namespace DataLayer
             }
         }
 
-        private void Disconnect()
+        public void Disconnect()
         {
             if (cn.State == ConnectionState.Open)
             {
@@ -50,6 +50,20 @@ namespace DataLayer
             finally
             {
                 Disconnect();
+            }
+        }
+
+        public SqlDataReader MyExcuteReader(string sql, CommandType type)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                cmd.CommandType = type;
+                return cmd.ExecuteReader();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
         }
     }

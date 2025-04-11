@@ -30,9 +30,12 @@ namespace PresentationLayer.FormSupplier
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbSupplier = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
-            this.lbSupplier = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +49,16 @@ namespace PresentationLayer.FormSupplier
             this.panel1.Size = new System.Drawing.Size(691, 100);
             this.panel1.TabIndex = 0;
             // 
+            // lbSupplier
+            // 
+            this.lbSupplier.AutoSize = true;
+            this.lbSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSupplier.Location = new System.Drawing.Point(23, 33);
+            this.lbSupplier.Name = "lbSupplier";
+            this.lbSupplier.Size = new System.Drawing.Size(113, 31);
+            this.lbSupplier.TabIndex = 0;
+            this.lbSupplier.Text = "Supplier";
+            // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -57,21 +70,39 @@ namespace PresentationLayer.FormSupplier
             // dgvSupplier
             // 
             this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.address});
             this.dgvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSupplier.Location = new System.Drawing.Point(0, 100);
             this.dgvSupplier.Name = "dgvSupplier";
             this.dgvSupplier.Size = new System.Drawing.Size(691, 239);
             this.dgvSupplier.TabIndex = 2;
             // 
-            // lbSupplier
+            // Column1
             // 
-            this.lbSupplier.AutoSize = true;
-            this.lbSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSupplier.Location = new System.Drawing.Point(23, 33);
-            this.lbSupplier.Name = "lbSupplier";
-            this.lbSupplier.Size = new System.Drawing.Size(113, 31);
-            this.lbSupplier.TabIndex = 0;
-            this.lbSupplier.Text = "Supplier";
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "name";
+            this.Column2.HeaderText = "Tên";
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column2.Width = 500;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Địa chỉ";
+            this.address.Name = "address";
+            this.address.Width = 800;
             // 
             // FrmSupplier
             // 
@@ -85,6 +116,7 @@ namespace PresentationLayer.FormSupplier
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmSupplier";
             this.Text = "Supplier";
+            this.Load += new System.EventHandler(this.FrmSupplier_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
@@ -98,5 +130,8 @@ namespace PresentationLayer.FormSupplier
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvSupplier;
         private System.Windows.Forms.Label lbSupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
     }
 }
