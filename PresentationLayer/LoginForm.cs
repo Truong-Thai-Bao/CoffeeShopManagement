@@ -1,20 +1,24 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransferObject;
+using BusinessLayer;
 namespace PresentationLayer
 {
     public partial class LoginForm : Form
     {
+        private LoginBL loginBL;
         public LoginForm()
         {
             InitializeComponent();
+            loginBL = new LoginBL();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -23,8 +27,15 @@ namespace PresentationLayer
         }
         private bool UserLogin(Account account)
         {
-            //return false;
-            return true;
+            try
+            {
+                return loginBL.Login(account);
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {

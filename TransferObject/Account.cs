@@ -8,8 +8,8 @@ namespace TransferObject
 {
     public class Account
     {
-        private string username { get; set; }
-        private string password { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
         public Account(string user, string pass)
         {
             this.username = user;
