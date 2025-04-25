@@ -29,5 +29,23 @@ namespace BusinessLayer
                 throw ex;
             }
         }
+
+        public int Insert(Supplier supplier)
+        {
+            //Nếu muốn xử lí lỗi id.lengh chỉ đc = 5
+            if(supplier.id.Length != 5)
+            {
+                throw new Exception("Id chỉ được phép có 5 kí tự");
+            }
+            try
+            {
+                return supplierDL.Insert(supplier);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

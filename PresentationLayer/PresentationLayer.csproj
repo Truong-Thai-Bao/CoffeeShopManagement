@@ -53,6 +53,12 @@
     <Compile Include="Coffee.Designer.cs">
       <DependentUpon>Coffee.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSupplier\FrmAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSupplier\FrmAddSupplier.Designer.cs">
+      <DependentUpon>FrmAddSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSupplier\FrmSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Coffee.resx">
       <DependentUpon>Coffee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSupplier\FrmAddSupplier.resx">
+      <DependentUpon>FrmAddSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupplier\FrmSupplier.resx">
       <DependentUpon>FrmSupplier.cs</DependentUpon>

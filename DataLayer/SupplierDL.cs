@@ -32,5 +32,40 @@ namespace DataLayer
                 throw ex;
             }
         }
+
+        //Cách thông thường
+        public int Insert(Supplier supplier)
+        {
+            string sql = $"insert into Supplier values('{supplier.id}','{supplier.name}','{supplier.address}')";
+            try
+            {
+                return MyExecuteNonQuery(sql, CommandType.Text);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        ///Cách truyền theo biến
+        //public int Insert(Supplier supplier)
+        //{
+        //    string sql = "uspInsertSupplier";
+        //    List<SqlParameter> parameters = new List<SqlParameter>();
+        //    parameters.Add(new SqlParameter("@id", supplier.id));
+        //    parameters.Add(new SqlParameter("@name", supplier.name));
+        //    parameters.Add(new SqlParameter("@address", supplier.address));
+        //    try
+        //    {
+        //        return MyExecuteNonQuery(sql, CommandType.StoredProcedure,parameters);
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        throw ex;
+        //    }
+
+        //}
     }
 }

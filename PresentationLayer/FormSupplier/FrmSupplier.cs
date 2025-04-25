@@ -21,7 +21,7 @@ namespace PresentationLayer.FormSupplier
             supplierBL = new SupplierBL();
         }
 
-        private void FrmSupplier_Load(object sender, EventArgs e)
+        private void LoadSupplier()
         {
             try
             {
@@ -31,6 +31,29 @@ namespace PresentationLayer.FormSupplier
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void FrmSupplier_Load(object sender, EventArgs e)
+        {
+            LoadSupplier();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmAddSupplier frmAddSupplier = new FrmAddSupplier();
+            DialogResult result = frmAddSupplier.ShowDialog();
+            if (result == DialogResult.OK)
+                LoadSupplier();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

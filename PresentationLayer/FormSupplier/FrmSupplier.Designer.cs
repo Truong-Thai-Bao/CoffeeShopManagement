@@ -29,6 +29,7 @@ namespace PresentationLayer.FormSupplier
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSupplier));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbSupplier = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -36,7 +37,9 @@ namespace PresentationLayer.FormSupplier
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,8 +49,9 @@ namespace PresentationLayer.FormSupplier
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(691, 100);
+            this.panel1.Size = new System.Drawing.Size(1151, 100);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lbSupplier
             // 
@@ -61,11 +65,13 @@ namespace PresentationLayer.FormSupplier
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 339);
+            this.panel2.Location = new System.Drawing.Point(0, 477);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(691, 100);
+            this.panel2.Size = new System.Drawing.Size(1151, 100);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // dgvSupplier
             // 
@@ -77,7 +83,7 @@ namespace PresentationLayer.FormSupplier
             this.dgvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSupplier.Location = new System.Drawing.Point(0, 100);
             this.dgvSupplier.Name = "dgvSupplier";
-            this.dgvSupplier.Size = new System.Drawing.Size(691, 239);
+            this.dgvSupplier.Size = new System.Drawing.Size(1151, 377);
             this.dgvSupplier.TabIndex = 2;
             // 
             // Column1
@@ -104,11 +110,22 @@ namespace PresentationLayer.FormSupplier
             this.address.Name = "address";
             this.address.Width = 800;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.Location = new System.Drawing.Point(67, 22);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(92, 66);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // FrmSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 439);
+            this.ClientSize = new System.Drawing.Size(1151, 577);
             this.Controls.Add(this.dgvSupplier);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -119,6 +136,7 @@ namespace PresentationLayer.FormSupplier
             this.Load += new System.EventHandler(this.FrmSupplier_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
             this.ResumeLayout(false);
 
@@ -133,5 +151,6 @@ namespace PresentationLayer.FormSupplier
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
